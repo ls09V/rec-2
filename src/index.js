@@ -1,5 +1,3 @@
-import './styles.css';
-
 function createUserCard(user) {
     const content = document.getElementById('content');
     const card = document.createElement('div');
