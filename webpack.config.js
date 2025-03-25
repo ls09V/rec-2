@@ -21,7 +21,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',  // Creates style nodes from JS strings
+          'css-loader'     // Translates CSS into CommonJS
+        ]
       }
     ]
   },
@@ -30,6 +33,9 @@ module.exports = {
       template: './src/index.html'
     })
   ],
+  resolve: {
+    extensions: ['.js', '.css']  // Add this to help resolve extensions
+  },
   devServer: {
     static: path.join(__dirname, 'dist'),
     port: 8080,
